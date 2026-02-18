@@ -48,8 +48,17 @@ public class DoubleLinkedList<T> implements java.util.List{
 
     @Override
     public boolean add(Object e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+
+        Node<T> newNode = new Node(e);
+        if (head!=null) {
+            tail.setNext(newNode);
+            newNode.setPrevius(tail);
+            tail = newNode;
+        } else{
+            head = newNode;
+            tail = newNode;
+        }
+        return tail.equals(newNode);
     }
 
     @Override
