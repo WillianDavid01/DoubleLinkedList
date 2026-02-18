@@ -58,6 +58,7 @@ public class DoubleLinkedList<T> implements java.util.List{
             head = newNode;
             tail = newNode;
         }
+        size++;
         return tail.equals(newNode);
     }
 
